@@ -18,23 +18,17 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Usuario: </label>
+        <label>Username</label>
         <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
       </div>
-
       <div>
-        <label>Contraseña: </label>
+        <label>Password</label>
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
-
-      <button type="submit">Iniciar Sesion</button>
-
-      {isLoading && triggerFetch && (<p>Cargando...</p>)}
-      {isError && <p>Error al cargar los datos.</p>}
-      {data && (<p>{`Token obtenido: ${data.token}`}</p>)}
-
+      <button type="submit">Login</button>
     </form>
   );
 };
 
 export default LoginForm;
+

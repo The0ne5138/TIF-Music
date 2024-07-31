@@ -1,12 +1,13 @@
 const API_URL = 'https://sandbox.academiadevelopers.com/';
 
 export const loginUser = async (username, password) => {
-  const response = await fetch(`${API_URL}/login`, {
+  const response = await fetch(`${API_URL}/api-auth/`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })
   });
   const data = await response.json();
+  data.user = username; //Me
   if (!response.ok) throw new Error(data.message);
   return data;
 };
@@ -41,6 +42,7 @@ export const fetchSongDetail = async (id) => {
   return data;
 };
 
+// PAra usarla en songForm.
 export const createSong = async (songData) => {
   const response = await fetch(`${API_URL}/songs`, {
     method: 'POST',
@@ -62,6 +64,8 @@ export const updateSong = async (id, songData) => {
   if (!response.ok) throw new Error(data.message);
   return data;
 };
+
+
 
 
 /*

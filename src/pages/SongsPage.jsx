@@ -15,8 +15,8 @@ const SongsPage = () => {
 
   return (
     <div>
-      <h1>Songs</h1>
-      <button onClick={handleCreate}>Create Song</button>
+      <h1>Canciones</h1>
+      <button onClick={handleCreate}>Nueva Cancion</button>
       {isCreating ? (
         <SongForm onSave={handleSave} />
       ) : (
