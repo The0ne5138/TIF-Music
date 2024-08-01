@@ -20,17 +20,10 @@ const App = () => (
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
-
           <Route path="/login" element={<LoginPage />} />
-
           <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
-
           <Route path="/songs" element={<SongsPage />} />
-
           <Route path="/songs/:id" element={<SongDetail />} />
-
-          <Route path="/buscar" element={<Search />} />
-          
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

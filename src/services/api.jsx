@@ -1,7 +1,7 @@
-const API_URL = 'https://sandbox.academiadevelopers.com/';
+const API_URL = 'https://sandbox.academiadevelopers.com/harmonyhub';
 
 export const loginUser = async (username, password) => {
-  const response = await fetch(`${API_URL}/api-auth/`, {
+  const response = await fetch(`https://sandbox.academiadevelopers.com/api-auth/`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })
@@ -11,9 +11,9 @@ export const loginUser = async (username, password) => {
   if (!response.ok) throw new Error(data.message);
   return data;
 };
-
+/*
 export const getProfile = async (token) => {
-  const response = await fetch(`${API_URL}/profile`, {
+  const response = await fetch(`${API_URL}/profile/`, {
     headers: { Authorization: `Bearer ${token}` }
   });
   const data = await response.json();
@@ -21,15 +21,19 @@ export const getProfile = async (token) => {
   return data;
 };
 
+
 export const fetchMusic = async () => {
-  const response = await fetch(`${API_URL}/music`);
+  const response = await fetch(`${API_URL}/music/`);
   const data = await response.json();
   if (!response.ok) throw new Error(data.message);
   return data;
 };
-
+*/
 export const fetchSongs = async () => {
-  const response = await fetch(`${API_URL}/songs`);
+  const response = await fetch(`${API_URL}/songs/`,{
+    //method: 'GET',
+    //headers: { 'Content-Type': 'application/json' },
+  });
   const data = await response.json();
   if (!response.ok) throw new Error(data.message);
   return data;
@@ -44,7 +48,7 @@ export const fetchSongDetail = async (id) => {
 
 // PAra usarla en songForm.
 export const createSong = async (songData) => {
-  const response = await fetch(`${API_URL}/songs`, {
+  const response = await fetch(`${API_URL}/songs/`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(songData)

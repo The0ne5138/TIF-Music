@@ -7,11 +7,12 @@ const ProfilePage = () => {
 
   if (!user) return <div>Loading...</div>;
 
+  //<p>Email: {user.email}</p>  Esto despues del Nombre
   return (
     <div>
-      <h1>Profile</h1>
-      <p>Name: {user.name}</p>
-      <p>Email: {user.email}</p>
+      <h1>Perfil</h1>
+      <p>Nombre: {username}</p>
+      
     </div>
   );
 };

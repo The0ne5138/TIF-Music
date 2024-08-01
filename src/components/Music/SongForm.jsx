@@ -3,12 +3,12 @@ import { createSong, updateSong } from '../../services/api';
 
 const SongForm = ({ song = {}, onSave }) => {
   const [title, setTitle] = useState(song.title || '');
-  const [artist, setArtist] = useState(song.artist || '');
-  const [album, setAlbum] = useState(song.album || '');
+  const [year, setYear] = useState(song.year);
+  const [album, setAlbum] = useState(song.album);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const songData = { title, artist, album };
+    const songData = { title, year, album };
     try {
       if (song.id) {
         await updateSong(song.id, songData);
@@ -28,12 +28,12 @@ const SongForm = ({ song = {}, onSave }) => {
         <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
       </div>
       <div>
-        <label>Artista</label>
-        <input type="text" value={artist} onChange={(e) => setArtist(e.target.value)} />
+        <label>Año</label>
+        <input type="number" value={year} onChange={(e) => setYear(e.target.value)} />
       </div>
       <div>
         <label>Album</label>
-        <input type="text" value={album} onChange={(e) => setAlbum(e.target.value)} />
+        <input type="number" value={album} onChange={(e) => setAlbum(e.target.value)} />
       </div>
       <button type="submit">Guardar</button>
     </form>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SongsList from '../components/Songs/SongsList';
-import SongForm from '../components/Songs/SongForm';
+import SongList from '../components/Music/SongList';
+import SongForm from '../components/Music/SongForm';
 
 const SongsPage = () => {
   const [isCreating, setIsCreating] = useState(false);
@@ -17,11 +17,7 @@ const SongsPage = () => {
     <div>
       <h1>Canciones</h1>
       <button onClick={handleCreate}>Nueva Cancion</button>
-      {isCreating ? (
-        <SongForm onSave={handleSave} />
-      ) : (
-        <SongsList />
-      )}
+      {isCreating ? (<SongForm onSave={handleSave} />) : (<SongList />)}
     </div>
   );
 };
