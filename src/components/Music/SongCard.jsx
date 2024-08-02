@@ -7,7 +7,6 @@ const SongCard = ({ song, onDelete, onEdit }) => {
         <div className="media">
           <div className="media-content">
             <p className="title is-4">{song.title}</p>
-            {/* Si tienes el nombre del artista en lugar de solo su ID */}
             <p className="subtitle is-6">{song.artist}</p>
           </div>
         </div>

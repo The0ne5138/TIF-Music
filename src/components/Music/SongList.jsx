@@ -68,7 +68,7 @@ function SongList() {
         <div>
             <div className="my-5">
                 <h2 className="title">Lista de Canciones</h2>
-                {/*  <AddSongForm onAdd={handleAdd} /> Aqui Se muestra el formulario  */}
+                {/*  <AddSongForm onAdd={handleAdd} /> Formulario  */}
                 <ul>
                     {songs.map((song) => (
                         <div key={song.id} className="column is-two-third">
@@ -87,36 +87,3 @@ function SongList() {
 
 export default SongList;
 
-/*
-import React, { useEffect, useState } from 'react';
-import { fetchSongs } from '../../services/api';
-import SongDetail from './SongDetail';
-
-const SongList = () => {
-  const [music, setMusic] = useState([]);
-
-  useEffect(() => {
-    fetchSongs().then(data => setMusic(data));
-  }, []);
-
-  return (
-    <div>
-      <h1>Lista de Canciones</h1>
-      <ul>
-        {music.results.map((song) => (
-            <div key={song.id} className="column is-two-third">
-                <SongDetail song={song} onDelete={handleDelete} onEdit={handleEdit}/>
-            </div>
-        ))}
-
-      </ul>
-    </div>
-  );
-};
-
-{music.results.map((song) => (
-  <li key={song.id}>{song.title}</li>
-))}
-
-export default SongList;
-  */

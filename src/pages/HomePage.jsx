@@ -45,8 +45,6 @@ const HomePage = () => {
       <h1>Home</h1>
       <p>Vienvenido a Salta Music!</p>
       <Link to="/songs">View Songs</Link>
-
-      {/* Integración de los componentes de búsqueda */}
       <SearchBar onSearch={handleSearch} />
       <SearchResults results={results} />
     </div>

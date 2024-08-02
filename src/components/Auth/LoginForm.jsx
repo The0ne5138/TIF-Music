@@ -11,18 +11,18 @@ const LoginForm = () => {
     try {
       await login(username, password);
     } catch (error) {
-      alert('Login failed: ' + error.message);
+      alert('Login Fallido: ' + error.message);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Username</label>
+        <label>Nombre de Ususario</label>
         <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
       </div>
       <div>
-        <label>Password</label>
+        <label>Contraseña</label>
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
       <button type="submit">Login</button>

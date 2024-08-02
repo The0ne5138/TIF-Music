@@ -7,9 +7,7 @@ const AddSongForm = ({ onAdd }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title && songFile) {
-      // Llama a la función onAdd con los datos de la nueva canción
       onAdd({ title, song_file: songFile });
-      // Limpia los campos del formulario después de agregar
       setTitle('');
       setSongFile('');
     }

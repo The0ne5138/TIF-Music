@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-      const token = localStorage.getItem('token'); // Cargar perfil de usuario si hay token
+      const token = localStorage.getItem('token'); 
       if (token) { 
         getProfile(token).then(user => setAuthState({ isAuthenticated: true, user, token })) //setAuthState({ isAuthenticated: true, user, token })
         .catch(() => {

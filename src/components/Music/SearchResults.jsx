@@ -1,5 +1,4 @@
 import React from 'react';
-//import MusicCard from './MusicCard';
 import SongDetail from './SongDetail';
 
 const SearchResults = ({ results }) => {
@@ -18,13 +17,3 @@ const SearchResults = ({ results }) => {
 };
 
 export default SearchResults;
-/*
-  return (
-    <div className="search-results">
-        <h1>Lista de Canciones</h1>
-        {results.map((item) => (
-            <MusicCard key={item.id} item={item} />
-      ))}
-    </div>
-  );
-*/

@@ -31,8 +31,8 @@ export const fetchMusic = async () => {
 */
 export const fetchSongs = async () => {
   const response = await fetch(`${API_URL}/songs/`,{
-    //method: 'GET',
-    //headers: { 'Content-Type': 'application/json' },
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
   });
   const data = await response.json();
   if (!response.ok) throw new Error(data.message);
