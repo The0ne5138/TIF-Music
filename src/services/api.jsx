@@ -1,7 +1,7 @@
 const API_URL = 'https://sandbox.academiadevelopers.com/';
 
 export const loginUser = async (username, password) => {
-  const response = await fetch(`${API_URL}/login`, {
+  const response = await fetch(`${API_URL}/api-auth/`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })
@@ -10,7 +10,7 @@ export const loginUser = async (username, password) => {
   if (!response.ok) throw new Error(data.message);
   return data;
 };
-
+/*
 export const getProfile = async (token) => {
   const response = await fetch(`${API_URL}/profile`, {
     headers: { Authorization: `Bearer ${token}` }
@@ -19,7 +19,7 @@ export const getProfile = async (token) => {
   if (!response.ok) throw new Error(data.message);
   return data;
 };
-
+*/
 export const fetchMusic = async () => {
   const response = await fetch(`${API_URL}/music`);
   const data = await response.json();
