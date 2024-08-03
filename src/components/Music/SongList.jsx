@@ -68,7 +68,7 @@ function SongList() {
         <div>
             <div className="my-5">
                 <h2 className="title">Lista de Canciones</h2>
-                {/*  <AddSongForm onAdd={handleAdd} /> Aqui Se muestra el formulario  */}
+                {/*  <AddSongForm onAdd={handleAdd} />  muestra el formulario  */}
                 <ul>
                     {songs.map((song) => (
                         <div key={song.id} className="column is-two-third">

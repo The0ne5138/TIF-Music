@@ -14,9 +14,9 @@ const SearchBar = ({ onSearch }) => {
         type="text" 
         value={query} 
         onChange={(e) => setQuery(e.target.value)} 
-        placeholder="Search for songs, artists, or genres..." 
+        placeholder="Buscar por cancion, artista, o genero..." 
       />
-      <button type="submit">Search</button>
+      <button type="submit">Buscar</button>
     </form>
   );
 };
