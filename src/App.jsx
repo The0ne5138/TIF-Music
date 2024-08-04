@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
+import Login from './components/Auth/Login';
 import ProfilePage from './pages/ProfilePage';
 import SongsPage from './pages/SongsPage';
 import SongDetail from './components/Music/SongDetail';
@@ -20,7 +20,7 @@ const App = () => (
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<PrivateRoute> <ProfilePage /> </PrivateRoute>} />
           <Route path="/songs" element={<SongsPage />} />
           <Route path="/songs/:id" element={<SongDetail />} />

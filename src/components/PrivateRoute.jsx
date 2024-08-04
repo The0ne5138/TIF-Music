@@ -1,11 +1,19 @@
-import React, { useContext } from 'react';
-import { Navigate } from 'react-router-dom';
-import { AuthContext } from '../contexts/AuthContext';
+//import React, { useContext } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const PrivateRoute = ({ children }) => {
-  const { authState } = useContext(AuthContext);
+  //const isAuthenticated = localStorage.getItem("authToken") !== null;
+  const { isAuthenticated } = useAuth("state");
+  const location = useLocation();
 
-  return authState.isAuthenticated ? children : <Navigate to="/HomePage" />;//<Navigate to="/login" />;
+  if (!isAuthenticated) {
+    return <Navigate to="/login" state={{ from: location }} />;
+}
+
+return children;
+
+  //return authState.isAuthenticated ? children : <Navigate to="/HomePage" />; //<Navigate to="/login" />;
 };
 
 export default PrivateRoute;

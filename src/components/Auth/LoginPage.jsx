@@ -1,6 +1,9 @@
+// ES LO MISMO QUE LOGIN SOLO QUE ESTE ES EL VIEJO LOGIN
+
+
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
