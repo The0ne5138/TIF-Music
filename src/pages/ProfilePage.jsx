@@ -5,7 +5,7 @@ function Profile() {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [editMode, setEditMode] = useState(true);
+    const [editMode, setEditMode] = useState(false);
     const [loadingUpdate, setLoadingUpdate] = useState(false);
     const [errorUpdating, setErrorUpdating] = useState(false);
     const [dob, setDob] = useState('');
@@ -96,7 +96,7 @@ function Profile() {
                 <>
                     <div>
                         <img
-                            src={userData.image || "https://bulma.io/assets/images/placeholders/96x96.png"}
+                            src={userData.image || "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fdf706ba-1ba7-47ce-8ef6-bd6931b7cb15/d4dk13v-3b45d0f7-abaa-4851-81b2-2ca5f2bf99fb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ZkZjcwNmJhLTFiYTctNDdjZS04ZWY2LWJkNjkzMWI3Y2IxNVwvZDRkazEzdi0zYjQ1ZDBmNy1hYmFhLTQ4NTEtODFiMi0yY2E1ZjJiZjk5ZmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._c9vRNczdzWfYopvLgm7tQG2fUFtRjXbFQf5gp6q0NU"}
                             alt="Profile image"
                             style={{ borderRadius: "50%" }}
                         />
