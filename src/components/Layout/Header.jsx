@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 //import { AuthContext } from '../../contexts/AuthContext';
 import { useAuth } from "../../contexts/AuthContext";
 
-const isAuthenticated = localStorage.getItem("authToken") !== null;
+//const isAuthenticated = localStorage.getItem("authToken") !== null;
 
 const Header = () => {
   const { logout } = useAuth("actions");
+  const { isAuthenticated } = useAuth("state");
   //const {actions} = useContext(AuthContext);
 
   return (
@@ -17,14 +18,13 @@ const Header = () => {
           <Link to="/">Home</Link>
         </div>
         <div>
-        {isAuthenticated ? (<p>El usuario está autenticado.</p>) : 
-                           (<p>El usuario no está autenticado.</p>)}
+        {isAuthenticated ? (<p>USUSARIO AUTENTICADO</p>) : 
+                           (<p>USUSARIO NO AUTH.</p>)}
         </div>
 
         {isAuthenticated ? (
           <>
             <Link to="/profile"> Perfil </Link>
-            <Link to="/logout"> Salir </Link>
             <button onClick={logout}>Salir</button>
           </>
         ) : (

@@ -6,10 +6,10 @@ const Sidebar = () => {
     <aside>
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
+          
           <li><Link to="/songs">Canciones</Link></li>
           <li><Link to="/profile">Perfil</Link></li>
-          <li><Link to="/buscar">Buscar</Link></li> 
+          <li><Link to="/search">Buscar</Link></li> 
         </ul>
       </nav>
     </aside>

@@ -23,9 +23,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Home</h1>
+      
       <p>Vienvenido a Salta Music!</p>
-      <Link to="/songs">View Songs</Link>
+      <Link to="/songs">Ver Canciones</Link>
       <SearchBar onSearch={handleSearch} />
       <SearchResults results={results} />
     </div>
