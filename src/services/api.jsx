@@ -30,7 +30,7 @@ export const fetchMusic = async () => {
 };
 */
 export const fetchSongs = async () => {
-  const response = await fetch(`${API_URL}/songs/`,{
+  const response = await fetch(`${API_URL}/songs/?page_size=100`,{
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   });
@@ -69,6 +69,26 @@ export const updateSong = async (id, songData) => {
   return data;
 };
 
+export const fetchGenres = async () => {
+  const response = await fetch(`${API_URL}/genres/?page_size=20`,{
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.message);
+  return data;
+};
+
+
+export const fetchArtists  = async () => {
+  const response = await fetch(`${API_URL}/artists/?page_size=20`,{
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.message);
+  return data;
+};
 
 
 

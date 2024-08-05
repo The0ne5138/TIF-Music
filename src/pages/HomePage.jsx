@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import SearchBar from '../components/Music/SearchBar';
-import SearchResults from '../components/Music/SearchResults';
+//import SearchBar from '../components/Music/SearchBar';
+//import SearchResults from '../components/Music/SearchResults';
 import { fetchSongs } from '../services/api';
+import Buscar from '../components/Music/Buscar'
 
 const HomePage = () => {
   const [results, setResults] = useState([]);
@@ -26,8 +27,10 @@ const HomePage = () => {
       
       <p>Vienvenido a Salta Music!</p>
       <Link to="/songs">Ver Canciones</Link>
-      <SearchBar onSearch={handleSearch} />
-      <SearchResults results={results} />
+
+      <Link to="/buscar">Buscar Canciones</Link>
+      <Buscar onSearch={handleSearch} />
+
     </div>
   );
 };
@@ -45,6 +48,8 @@ const HomePage = () => {
       <h1>Home</h1>
       <p>Vienvenido a Salta Music!</p>
       <Link to="/songs">View Songs</Link>
+      <SearchBar onSearch={handleSearch} />
+      <SearchResults results={results} />
     </div>
   );
 };

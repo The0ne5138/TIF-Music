@@ -12,6 +12,7 @@ import Sidebar from './components/Layout/Sidebar';
 import PrivateRoute from './components/PrivateRoute';
 import NotFoundPage from './pages/NotFoundPage';
 import SearchBar from './components/Music/SearchBar';
+import Buscar from './components/Music/Buscar';
 
 const App = () => (
   <Router>
@@ -25,7 +26,8 @@ const App = () => (
           <Route path="/profile" element={<PrivateRoute> <ProfilePage /> </PrivateRoute>} />
           <Route path="/songs" element={<SongsPage />} />
           <Route path="/songs/:id" element={<SongDetail />} />
-          <Route path="/search" element={<SearchBar />} />
+          
+          <Route path="/buscar" element={<Buscar />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

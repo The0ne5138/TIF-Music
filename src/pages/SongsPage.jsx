@@ -14,7 +14,7 @@ const SongsPage = () => {
   };
 
   return (
-    <div>
+    <div className='has-text-light'>
       <h1>Canciones</h1>
       <button onClick={handleCreate}>Nueva Cancion</button>
       {isCreating ? (<SongForm onSave={handleSave} />) : (<SongList />)}
