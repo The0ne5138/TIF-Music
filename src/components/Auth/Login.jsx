@@ -30,6 +30,7 @@ function Login() {
                     return response.json();
                 })
                 .then((responseData) => {
+                    console.log(responseData.token);
                     login(responseData.token);
                 })
                 .catch((error) => {

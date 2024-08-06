@@ -1,4 +1,50 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Layout/Header';
+import Sidebar from './components/Layout/Sidebar';
+import HomePage from './pages/HomePage';
+import Login from './components/Auth/Login';
+import ProfilePage from './pages/ProfilePage';
+import PrivateRoute from './components/PrivateRoute';
+import SongsPage from './pages/SongsPage';
+import SongDetail from './components/Music/SongDetail';
+import Buscar from './components/Music/Buscar';
+import NotFoundPage from './pages/NotFoundPage';
+import Footer from './components/Layout/Footer';
+//import AuthProvider from './AuthProvider';
+import { AuthProvider } from './contexts/AuthContext';
+
+const App = () => (
+  <Router>
+    <AuthProvider>
+      <Header />
+      <div className="columns">
+        <div className="column is-one-fifth">
+          <Sidebar />
+        </div>
+        <div className="column">
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
+              <Route path="/songs" element={<SongsPage />} />
+              <Route path="/songs/:id" element={<SongDetail />} />
+              <Route path="/buscar" element={<Buscar />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </main>
+        </div>
+      </div>
+      <Footer />
+    </AuthProvider>
+  </Router>
+);
+
+export default App;
+
+/*
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import HomePage from './pages/HomePage';
@@ -26,7 +72,6 @@ const App = () => (
           <Route path="/profile" element={<PrivateRoute> <ProfilePage /> </PrivateRoute>} />
           <Route path="/songs" element={<SongsPage />} />
           <Route path="/songs/:id" element={<SongDetail />} />
-          
           <Route path="/buscar" element={<Buscar />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
@@ -37,3 +82,4 @@ const App = () => (
 );
 
 export default App;
+*/

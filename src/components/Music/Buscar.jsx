@@ -9,8 +9,7 @@ const SongSearch = () => {
   const [selectedGenre, setSelectedGenre] = useState('');
   const [selectedArtist, setSelectedArtist] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchPerformed, setSearchPerformed] = useState(false); // Nuevo estado
-
+  const [searchPerformed, setSearchPerformed] = useState(false); 
   useEffect(() => {
     const loadData = async () => {
       const songData = await fetchSongs();
@@ -56,7 +55,7 @@ const SongSearch = () => {
     }
 
     setFilteredSongs(filtered);
-    setSearchPerformed(true); // Establece que la búsqueda se realizó
+    setSearchPerformed(true); 
   };
 
   return (
@@ -88,7 +87,7 @@ const SongSearch = () => {
 
       <button onClick={handleSearch}>Buscar</button>
 
-      {searchPerformed && ( // Solo mostrar resultados si se hizo una búsqueda
+      {searchPerformed && ( // para mostrar resultados despues de hacer click en el boton buscar.(antes se mostraba una vista previa mientras se iba buscando.)
         <div>
           <h2>Lista de Canciones</h2>
           <ul>

@@ -1,3 +1,31 @@
+import React from 'react';
+
+const HomePage = () => (
+  <div className="container">
+    <section className="section">
+      <div className="columns is-multiline">
+        <div className="column is-one-quarter">
+          <div className="card">
+            <div className="card-image">
+              <figure className="image is-4by3">
+                <img src="/path/to/album-art.jpg" alt="Album Art" />
+              </figure>
+            </div>
+            <div className="card-content">
+              <p className="title is-5">Song Title</p>
+              <p className="subtitle is-6">Artist Name</p>
+            </div>
+          </div>
+        </div>
+        {/* Repeat for more songs or albums */}
+      </div>
+    </section>
+  </div>
+);
+
+export default HomePage;
+
+/*
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 //import SearchBar from '../components/Music/SearchBar';
@@ -36,7 +64,7 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
+*/
 /*
 
 import React from 'react';
